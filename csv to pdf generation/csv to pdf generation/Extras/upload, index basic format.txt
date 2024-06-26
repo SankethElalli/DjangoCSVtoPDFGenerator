@@ -1,0 +1,35 @@
+upload.hmtl
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the CSV to PDF Generation.</h1>
+    <a href="{% url 'upload_file' %}">Upload a CSV file</a>
+</body>
+</html>
+
+
+
+
+
+
+
+index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV</title>
+</head>
+<body>
+    <h1>Upload a CSV file to convert to PDF</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
